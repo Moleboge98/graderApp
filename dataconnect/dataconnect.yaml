@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "Grader_vite"
+location: "europe-central2"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "grader_vite-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

@@ -1,0 +1,47 @@
+/* Import Tailwind's base, components, and utilities styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom global styles */
+body {
+  /* font-family is set in tailwind.config.js, but you can override here if needed */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom focus visibility styles (Tailwind's focus-visible utilities are generally preferred) */
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #3b82f6; /* blue-500 */
+  outline-offset: 2px;
+}
+
+.notebook-preview {
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid #e5e7eb; /* Tailwind: border-gray-200 */
+  border-radius: 0.5rem; /* Tailwind: rounded-lg */
+  padding: 1rem; /* Tailwind: p-4 */
+  background-color: #f9fafb; /* Tailwind: bg-gray-50 */
+}
+
+/* Dark mode specific styles (Tailwind handles most of this with dark: prefixes) */
+/* You might not need all of these if Tailwind's dark mode utilities cover your needs */
+@media (prefers-color-scheme: dark) {
+  .notebook-preview {
+    background-color: #1f2937; /* Tailwind: dark:bg-gray-800 */
+    border-color: #374151; /* Tailwind: dark:border-gray-700 */
+  }
+  /* Add any other global dark mode overrides here if necessary */
+}
+
+/* Ensure icons used in components are styled if they are SVGs */
+.icon-sm {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+}
+
+.icon-md {
+  width: 1.5rem; /* 24px */
+  height: 1.5rem; /* 24px */
+}
