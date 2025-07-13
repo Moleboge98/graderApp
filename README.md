@@ -1,7 +1,7 @@
 # Jupyter Notebook Grading Platform
 A modern, web-based platform designed for educational settings to streamline the submission and grading of Jupyter notebooks. Built with React, Vite, and Firebase, this application provides a seamless experience for students, graders, and administrators.
 
-Features
+# Features
 Role-Based Access Control: Separate dashboards and functionalities for three distinct user roles:
 
 Students: Can submit assignments (via notebook links), track their submission status, view grades, and see detailed rubric-based feedback.
@@ -26,7 +26,7 @@ Dynamic Filtering & Stats: Graders can filter submissions by status (To Grade, G
 
 Certificate Generation: Students who meet the grading threshold (e.g., >= 50%) can download a PDF certificate of completion directly from their dashboard.
 
-Tech Stack
+# Tech Stack
 Frontend: React (Vite)
 
 Backend & Database: Firebase (Firestore, Authentication)
@@ -35,7 +35,7 @@ Styling: Tailwind CSS
 
 AI Integration: Google Gemini API
 
-Getting Started
+# Getting Started
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
 Prerequisites
@@ -45,35 +45,35 @@ A Firebase project.
 
 Installation
 Clone the repository:
-
+```
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-
+```
 Install NPM packages:
-
+```
 npm install
-
-Set up environment variables:
+```
+**Set up environment variables:**
 
 Create a file named .env in the root of your project.
 
 Go to your Firebase project settings and find your web app's configuration object.
 
 Add your Firebase config to the .env file. The keys must start with VITE_.
-
+```
 VITE_FIREBASE_API_KEY="your-api-key"
 VITE_FIREBASE_AUTH_DOMAIN="your-auth-domain"
 VITE_FIREBASE_PROJECT_ID="your-project-id"
 VITE_FIREBASE_STORAGE_BUCKET="your-storage-bucket"
 VITE_FIREBASE_MESSAGING_SENDER_ID="your-messaging-sender-id"
 VITE_FIREBASE_APP_ID="your-app-id"
-
+```
 Update Firebase Config File:
 
 Open src/firebase-config.js.
 
 Ensure it is set up to read the environment variables from your .env file.
-
+```
 // src/firebase-config.js
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -83,11 +83,11 @@ const firebaseConfig = {
     messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
     appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
-
+```
 Run the development server:
-
+```
 npm run dev
-
+```
 The application should now be running on http://localhost:5173 (or another port if 5173 is in use).
 
 Firebase Setup
@@ -98,7 +98,7 @@ Firestore Database:
 Create a Firestore database.
 
 Go to the "Rules" tab and update your security rules to allow authenticated users to read and write data. For development, you can use the following rules. Note: These are not secure for production.
-
+```
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -108,7 +108,7 @@ service cloud.firestore {
     }
   }
 }
-
+```
 How to Use
 Sign Up: New users (students or graders) must first create an account using their email and password.
 
